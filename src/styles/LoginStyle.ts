@@ -9,6 +9,9 @@ const LoginContainer = styled(Box)`
   .MuiTypography-root {
     font-family: 'Manrope', sans-serif;
   }
+  .MuiBox-root {
+    box-sizing: border-box;
+  }
 `;
 
 const LoginleftContainer = styled(Box)`
