@@ -22,7 +22,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setUser(null)
       localStorage.removeItem('user')
       window.location.href = '/login'
-    }, 10000)
+    }, 120000)
   }, [isLoggedIn])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
