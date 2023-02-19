@@ -12,8 +12,15 @@ import {
   ProfileContainer,
   TopContainer,
 } from '../styles/ProfileStyle';
+import { useQuery } from '@apollo/client';
+import companyQuery from '../query';
+import { ICompany } from '../interface';
 
 const Profile = () => {
+const { loading, error, data } = useQuery(companyQuery);
+ if (loading) return <p>Loading...</p>
+ if (error) return <pre>{error.message}</pre>
+ const { cto, ceo, name }:ICompany = data.company;
   return (
     <ProfileContainer>
       <TopContainer>
@@ -25,22 +32,22 @@ const Profile = () => {
             <CompanyInfoBox>
               <Box display='flex' alignItems='center' columnGap={2}>
                 <Avatar>CN</Avatar>
-                <Typography variant='h4'>COMPANY NAME</Typography>
+                <Typography variant='h4'>{name}</Typography>
               </Box>
               <Box mt={6}>
                 <Typography variant='body2' fontSize='12px' mb={0.5}>
                   CEO
                 </Typography>
                 <Typography variant='body1' mb={0.5}>
-                  CEO NAME
+                  {ceo}
                 </Typography>
               </Box>
               <Box mt={4}>
                 <Typography variant='body2' fontSize='12px' mb={0.5}>
-                  CEO
+                  CTO
                 </Typography>
                 <Typography variant='body1' mb={0.5}>
-                  CEO NAME
+                 {cto}
                 </Typography>
               </Box>
             </CompanyInfoBox>
