@@ -37,6 +37,7 @@ const Login = () => {
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     setUser({ username: 'username', id: 1 })
+    localStorage.setItem('user', JSON.stringify({ username: 'username', id: 1 }))
   }
 
   useEffect(() => {

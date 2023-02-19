@@ -1,14 +1,12 @@
-import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { AuthContext } from './context/AuthContext'
 
 type IProps = {
   children: React.ReactNode
 }
 
 const ProtectedRoute = ({ children }: IProps) => {
-  const { user } = useContext(AuthContext)
-  if (!user) {
+  const isLoggedIn = localStorage.getItem('user')
+  if (!isLoggedIn) {
     return <Navigate to='/login' replace />
   }
 

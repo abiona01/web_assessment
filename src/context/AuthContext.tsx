@@ -15,13 +15,15 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user,
     setUser,
   }
+  const isLoggedIn = localStorage.getItem('user')
   useEffect(() => {
-    if (!user) return
-    const timer = setTimeout(() => {
+    if (!isLoggedIn) return
+    setInterval(() => {
       setUser(null)
-    }, 120000)
-    return () => clearTimeout(timer)
-  }, [user])
+      localStorage.removeItem('user')
+      window.location.href = '/login'
+    }, 10000)
+  }, [isLoggedIn])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

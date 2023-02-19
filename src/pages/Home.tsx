@@ -1,10 +1,12 @@
-import React from 'react'
+import { Navigate } from 'react-router-dom'
 
 const Home = () => {
-    window.location.href="/login"
-  return (
-    <div>Home</div>
-  )
+  const isLoggedIn = localStorage.getItem('user')
+  if (!isLoggedIn) {
+    return <Navigate to='/login' replace />
+  } else {
+    return <Navigate to='/profile' replace />
+  }
 }
 
 export default Home
