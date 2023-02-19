@@ -1,5 +1,4 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import logo from '../asset/logo.svg';
 import timer from '../asset/timer.svg';

@@ -61,7 +61,7 @@ const Login = () => {
                   >
                     Monitor your Earnings
                   </Typography>
-                  <Box width='296px'>
+                  <Box maxWidth='296px'>
                     {' '}
                     <Typography
                       variant='body1'
@@ -88,7 +88,7 @@ const Login = () => {
                   >
                     Manage your Businesses
                   </Typography>
-                  <Box width='296px'>
+                  <Box maxWidth='296px'>
                     {' '}
                     <Typography
                       variant='body1'
@@ -121,7 +121,7 @@ const Login = () => {
                   >
                     Delegate to Staff
                   </Typography>
-                  <Box width='296px'>
+                  <Box maxWidth='296px'>
                     {' '}
                     <Typography
                       variant='body1'
@@ -148,12 +148,12 @@ const Login = () => {
               </Typography>
               <TextFieldBox>
                 <Typography variant='body1' fontWeight={500} my={1}>
-                  Email
+                  Email / Username
                 </Typography>
                 <TextField
                   variant='outlined'
                   fullWidth
-                  type='email'
+                  type='text'
                   placeholder='Cokitchen222@gmail.co'
                 />
               </TextFieldBox>
