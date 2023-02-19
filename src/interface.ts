@@ -3,3 +3,8 @@ export interface ICompany {
     cto: string
     name: string
 }
+
+export interface IUser {
+    username: string
+    id: number
+}
