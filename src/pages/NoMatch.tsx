@@ -16,8 +16,8 @@ const NoMatch = () => {
       <Typography variant='h4' mb={4}>
         404: The page you are looking for isn&apos;t here
       </Typography>
-      <BackButton variant='contained' onClick={() => navigate('login')} size='large'>
-        Go to Login
+      <BackButton variant='contained' onClick={() => navigate('/')} size='large'>
+        Go Back
       </BackButton>
     </Box>
   )
